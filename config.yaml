@@ -1,0 +1,7 @@
+auth0:
+  domain: "example.auth0.com"
+  client_id: "your_client_id"
+  client_secret: "your_client_secret"
+  tenant_name: "My Auth0 Tenant"
+  logo_url: "https://example.com/logo.png"
+  default_directory: "email"
