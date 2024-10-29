@@ -5,3 +5,21 @@ auth0:
   tenant_name: "My Auth0 Tenant"
   logo_url: "https://example.com/logo.png"
   default_directory: "email"
+
+users:
+  user1:
+    email: "user1@example.com"
+    password: "SecurePassword1"
+    connection: "Username-Password-Authentication"
+  user2:
+    email: "user2@example.com"
+    password: "SecurePassword2"
+    connection: "Username-Password-Authentication"
+
+groups:
+  group1:
+    name: "Admin Group"
+    description: "Group for administrators"
+  group2:
+    name: "User Group"
+    description: "Group for regular users"

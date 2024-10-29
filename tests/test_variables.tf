@@ -5,7 +5,9 @@ locals {
     "auth0_client_secret",
     "tenant_name",
     "logo_url",
-    "default_directory"
+    "default_directory",
+    "users",
+    "groups"
   ]
 }
 

@@ -15,4 +15,19 @@ module "auth0" {
   tenant_name      = "Test Tenant"
   logo_url         = "https://test.com/logo.png"
   default_directory = "email"
+
+  users = {
+    user1 = {
+      email      = "user1@test.com"
+      password   = "TestPassword1"
+      connection = "Username-Password-Authentication"
+    }
+  }
+
+  groups = {
+    group1 = {
+      name        = "Test Group"
+      description = "A group for testing"
+    }
+  }
 }
