@@ -37,6 +37,14 @@ module "auth0" {
       type           = "web"
       callbacks      = ["https://test.com/callback"]
       allowed_origins = ["https://test.com"]
+      client_id      = "test_client_id"
+      client_secret  = "test_client_secret"
+      token_endpoint = "https://test.com/token"
+      logout_redirect_uri = "https://test.com/logout"
+      api_identifier = "api.test.com"
+      grant_types    = ["authorization_code"]
+      is_first_party = true
+      description    = "A test web application"
     }
   }
 }

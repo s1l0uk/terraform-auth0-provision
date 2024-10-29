@@ -28,9 +28,16 @@ resource "auth0_group" "groups" {
 resource "auth0_application" "applications" {
   for_each = var.applications
 
-  name        = each.value.name
-  type        = each.value.type
-  callbacks    = each.value.callbacks
-  allowed_origins = each.value.allowed_origins
-  # Additional application properties can be added here
+  name             = each.value.name
+  type             = each.value.type
+  callbacks        = try(each.value.callbacks, null)
+  allowed_origins  = try(each.value.allowed_origins, null)
+  client_id        = try(each.value.client_id, null)
+  client_secret    = try(each.value.client_secret, null)
+  token_endpoint    = try(each.value.token_endpoint, null)
+  logout_redirect_uri = try(each.value.logout_redirect_uri, null)
+  api_identifier   = try(each.value.api_identifier, null)
+  grant_types      = try(each.value.grant_types, null)
+  is_first_party   = try(each.value.is_first_party, null)
+  description      = try(each.value.description, null)
 }

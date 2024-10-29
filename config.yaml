@@ -32,6 +32,17 @@ applications:
       - "https://example.com/callback"
     allowed_origins:
       - "https://example.com"
+    client_id: "your_app_client_id"
+    client_secret: "your_app_client_secret"
+    token_endpoint: "https://example.com/token"
+    logout_redirect_uri: "https://example.com/logout"
+    api_identifier: "api.example.com"
+    grant_types:
+      - "authorization_code"
+      - "refresh_token"
+    is_first_party: true
+    description: "A web application for demonstration purposes"
+
   app2:
     name: "Native Application"
     type: "native"

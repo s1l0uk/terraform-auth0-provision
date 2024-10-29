@@ -48,9 +48,17 @@ variable "groups" {
 variable "applications" {
   description = "Map of applications to create"
   type        = map(object({
-    name           = string
-    type           = string
-    callbacks       = list(string)
-    allowed_origins = list(string)
+    name             = string
+    type             = string
+    callbacks        = optional(list(string))
+    allowed_origins  = optional(list(string))
+    client_id        = optional(string)
+    client_secret    = optional(string)
+    token_endpoint    = optional(string)
+    logout_redirect_uri = optional(string)
+    api_identifier   = optional(string)
+    grant_types      = optional(list(string))
+    is_first_party   = optional(bool)
+    description      = optional(string)
   }))
 }
