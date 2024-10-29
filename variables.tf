@@ -9,21 +9,4 @@ variable "auth0_client_id" {
 }
 
 variable "auth0_client_secret" {
-  description = "Auth0 client secret"
-  type        = string
-}
-
-variable "tenant_name" {
-  description = "Name of the Auth0 tenant"
-  type        = string
-}
-
-variable "logo_url" {
-  description = "URL for tenant logo"
-  type        = string
-}
-
-variable "default_directory" {
-  description = "Default directory for users"
-  type        = string
-}
+  description = "Auth0 cli
