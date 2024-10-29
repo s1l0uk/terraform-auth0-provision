@@ -1,0 +1,18 @@
+# main.tf
+
+```hcl
+provider "auth0" {
+  domain        = var.auth0_domain
+  client_id     = var.auth0_client_id
+  client_secret = var.auth0_client_secret
+}
+
+resource "auth0_client" "clients" {
+  for_each = { for client in yamldecode(file("${path.module}/customizations.yaml"))["clients"] : client["name"] => client }
+
+  name                      = each.value.name
+  description               = each.value.description
+  allowed_callback_urls      = each.value.allowed_callback_urls
+  allowed_logout_urls        = each.value.allowed_logout_urls
+  token_endpoint_auth_method = each.value.token_endpoint_auth_method
+}
