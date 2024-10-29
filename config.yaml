@@ -23,3 +23,18 @@ groups:
   group2:
     name: "User Group"
     description: "Group for regular users"
+
+applications:
+  app1:
+    name: "Web Application"
+    type: "web"
+    callbacks:
+      - "https://example.com/callback"
+    allowed_origins:
+      - "https://example.com"
+  app2:
+    name: "Native Application"
+    type: "native"
+    callbacks:
+      - "https://example.com/callback"
+    allowed_origins: []

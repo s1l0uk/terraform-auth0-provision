@@ -12,3 +12,8 @@ output "group_ids" {
   description = "List of created group IDs"
   value       = [for group in auth0_group.groups : group.id]
 }
+
+output "application_ids" {
+  description = "List of created application IDs"
+  value       = [for app in auth0_application.applications : app.id]
+}

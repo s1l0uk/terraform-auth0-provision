@@ -44,3 +44,13 @@ variable "groups" {
     description = string
   }))
 }
+
+variable "applications" {
+  description = "Map of applications to create"
+  type        = map(object({
+    name           = string
+    type           = string
+    callbacks       = list(string)
+    allowed_origins = list(string)
+  }))
+}

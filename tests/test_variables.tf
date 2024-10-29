@@ -7,7 +7,8 @@ locals {
     "logo_url",
     "default_directory",
     "users",
-    "groups"
+    "groups",
+    "applications"
   ]
 }
 

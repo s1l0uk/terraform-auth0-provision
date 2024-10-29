@@ -13,10 +13,9 @@ resource "auth0_tenant" "example" {
 resource "auth0_user" "users" {
   for_each = var.users
 
-  email    = each.value.email
-  password = each.value.password
+  email      = each.value.email
+  password   = each.value.password
   connection = each.value.connection
-  # Additional user properties can be added here
 }
 
 resource "auth0_group" "groups" {
@@ -24,4 +23,14 @@ resource "auth0_group" "groups" {
 
   name        = each.value.name
   description = each.value.description
+}
+
+resource "auth0_application" "applications" {
+  for_each = var.applications
+
+  name        = each.value.name
+  type        = each.value.type
+  callbacks    = each.value.callbacks
+  allowed_origins = each.value.allowed_origins
+  # Additional application properties can be added here
 }

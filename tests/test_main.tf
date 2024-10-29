@@ -30,4 +30,13 @@ module "auth0" {
       description = "A group for testing"
     }
   }
+
+  applications = {
+    app1 = {
+      name           = "Test Web App"
+      type           = "web"
+      callbacks      = ["https://test.com/callback"]
+      allowed_origins = ["https://test.com"]
+    }
+  }
 }
