@@ -1,0 +1,51 @@
+auth0:
+  domain: "example.auth0.com"
+  client_id: "your_client_id"
+  client_secret: "your_client_secret"
+  tenant_name: "My Auth0 Tenant"
+  logo_url: "https://example.com/logo.png"
+  default_directory: "email"
+
+users:
+  user1:
+    email: "user1@example.com"
+    password: "SecurePassword1"
+    connection: "Username-Password-Authentication"
+  user2:
+    email: "user2@example.com"
+    password: "SecurePassword2"
+    connection: "Username-Password-Authentication"
+
+groups:
+  group1:
+    name: "Admin Group"
+    description: "Group for administrators"
+  group2:
+    name: "User Group"
+    description: "Group for regular users"
+
+applications:
+  app1:
+    name: "Web Application"
+    type: "web"
+    callbacks:
+      - "https://example.com/callback"
+    allowed_origins:
+      - "https://example.com"
+    client_id: "your_app_client_id"
+    client_secret: "your_app_client_secret"
+    token_endpoint: "https://example.com/token"
+    logout_redirect_uri: "https://example.com/logout"
+    api_identifier: "api.example.com"
+    grant_types:
+      - "authorization_code"
+      - "refresh_token"
+    is_first_party: true
+    description: "A web application for demonstration purposes"
+
+  app2:
+    name: "Native Application"
+    type: "native"
+    callbacks:
+      - "https://example.com/callback"
+    allowed_origins: []
